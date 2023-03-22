@@ -54,7 +54,7 @@ def test_item_py_there(test_data_there):
 def test_item_py_four(test_data_one):
     class_exemplar = Item(*test_data_one)
     class_exemplar.name = 'Суперсмартфон'
-    assert class_exemplar.name == 'Смартфон'
+    assert class_exemplar.name == 'Суперсмартфон'
     class_exemplar.name = 'Телефон'
     assert class_exemplar.name == 'Телефон'
 
@@ -62,3 +62,9 @@ def test_item_py_four(test_data_one):
 def test_item_py_five():
     Item.instantiate_from_csv('src/items.csv')
     # assert len(Item.all) == 5
+
+
+def test_item_py_six():
+    item1 = Item("Смартфон", 10000, 20)
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+    assert str(item1) == 'Смартфон'
