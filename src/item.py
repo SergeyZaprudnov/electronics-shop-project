@@ -16,6 +16,7 @@ class Item:
         :param price: Цена за единицу товара.
         :param quantity: Количество товара в магазине.
         """
+        super().__init__()
         self.__name = name
         self.price = price * self.pay_rate
         self.quantity = quantity
@@ -61,8 +62,14 @@ class Item:
     def string_to_number(string):
         return int(float(string))
 
+    def __add__(self, other):
+        if isinstance(other, Item):
+            return other.quantity + self.quantity
+        else:
+            raise ValueError("Сложение возможно только для экземпляров Item и Phone")
+
     def __repr__(self):
-        return f'{self.name}, {self.price}, {self.quantity}'
+        return f"{self.__class__.__name__}('{self.name}', {int(self.price)}, {self.quantity})"
 
     def __str__(self):
         return f'{self.name}'
