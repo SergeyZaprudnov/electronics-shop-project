@@ -1,5 +1,5 @@
 from csv import DictReader
-
+from src.excep import InstantiateCSVError
 
 class Item:
     """
