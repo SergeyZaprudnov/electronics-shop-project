@@ -10,7 +10,7 @@ def test_data_one():
 
 @pytest.fixture
 def test_data_two():
-    return "Samsung s20+", 20000, 5, 0
+    return "Samsung s20+", 20000, 1, 0
 
 
 def test_phone_py_one(test_data_one):
